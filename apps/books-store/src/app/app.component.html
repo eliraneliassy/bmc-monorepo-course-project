@@ -1,1 +1,3 @@
-<bmc-b-course-project-nx-welcome></bmc-b-course-project-nx-welcome>
+<div *ngIf="books$ | async as books">
+    <div *ngFor="let book of books">{{book | json}}</div>
+</div>
