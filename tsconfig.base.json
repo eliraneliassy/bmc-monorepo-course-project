@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@bmc/books": ["libs/books/src/index.ts"],
-      "@bmc/books-ui": ["libs/books-ui/src/index.ts"]
+      "@bmc/books-ui": ["libs/books-ui/src/index.ts"],
+      "@bmc/logger": ["libs/logger/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,3 +1,4 @@
+import { LoggerService } from '@bmc/logger';
 import { Observable } from 'rxjs';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Book, BooksService } from '@bmc/books';
@@ -12,8 +13,12 @@ import { Book, BooksService } from '@bmc/books';
 })
 export class AppComponent {
 
+
+
   books$: Observable<Book[]>
-  constructor(private booksService: BooksService) { 
+  constructor(private booksService: BooksService,
+    private loggerService: LoggerService) {
     this.books$ = this.booksService.getBooks('Angular');
+    this.loggerService.log('Hello from the other side');
   }
 }
