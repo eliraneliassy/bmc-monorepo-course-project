@@ -1,3 +1,5 @@
 <div *ngIf="books$ | async as books">
-    <div *ngFor="let book of books">{{book | json}}</div>
+    <bmc-b-course-project-book *ngFor="let book of books" [book]="book">
+
+    </bmc-b-course-project-book>
 </div>
