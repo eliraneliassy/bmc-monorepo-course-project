@@ -2,6 +2,7 @@ import { LoggerService } from '@bmc/logger';
 import { Observable } from 'rxjs';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Book, BooksService } from '@bmc/books';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 
@@ -30,9 +31,23 @@ export class AppComponent {
     'Maayan',
     'Shahar'
   ];
-    constructor(private booksService: BooksService,
-    private loggerService: LoggerService) {
+
+  form: FormGroup;
+  constructor(private booksService: BooksService,
+    private loggerService: LoggerService, private fb: FormBuilder) {
     this.books$ = this.booksService.getBooks('Angular');
     this.loggerService.log('Hello from the other side');
+
+    this.form = this.fb.group(
+      {
+        name: this.fb.control(null),
+        password: this.fb.control(null)
+      }
+    )
+  }
+
+  submit(){
+    console.log(this.form);
+    
   }
 }

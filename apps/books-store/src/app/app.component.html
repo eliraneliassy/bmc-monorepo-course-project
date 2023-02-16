@@ -7,9 +7,21 @@
 
 <!-- <b-carousel [slides]="images"></b-carousel> -->
 
-<b-carousel [slides]="names" [slidesTempaltes]="namesTemplate"></b-carousel>
+<!-- <b-carousel [slides]="names" [slidesTempaltes]="namesTemplate"></b-carousel>
 
 <ng-template #namesTemplate let-name let-index="index" let-moshe="navigation">
     <div style="font-size: 30px;">{{name}} {{index}} </div>
     <button (click)="moshe.next()">CLICK HERE TO MOVE NEXT</button>
 </ng-template>
+ -->
+
+ <form [formGroup]="form">
+
+    <input formControlName="name">
+    <!-- <b-input formControlName="name"></b-input>
+    <b-input formControlName="password"></b-input> -->
+
+    <b-button (click)="submit()" text="SUBMIT"></b-button>
+
+ </form>
+
