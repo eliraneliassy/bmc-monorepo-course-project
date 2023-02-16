@@ -1,8 +1,9 @@
 <div>
     <label>{{label}} <ng-container *ngIf="required">*</ng-container></label>
-    <input [type]="type" [placeholder]="placeholder || ''" ngModel #input="ngModel">
+    <input [type]="type" [placeholder]="placeholder || ''" ngModel #input="ngModel"
+    (blur)="onTouched()" (input)="onChange($any($event.target).value)" [disabled]="disabled">
 
-    <small *ngIf="!input.valid">{{errorMsg}}</small>
+    <small *ngIf="!controlDir.control?.valid">{{errorMsg}}</small>
 
 
 </div>
