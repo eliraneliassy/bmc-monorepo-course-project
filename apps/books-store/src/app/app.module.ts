@@ -1,3 +1,4 @@
+import { CarouselComponentModule } from './../../../../libs/ui-components/carousel/carousel.component';
 
 import { LOGGER_CONFIG, LoggerConfig, LoggerModule } from '@bmc/logger';
 import { BooksUiModule } from '@bmc/books-ui';
@@ -17,7 +18,8 @@ const loggerConfig: LoggerConfig = {
   imports: [BrowserModule,
     HttpClientModule,
     BooksUiModule,
-    LoggerModule.forRoot(loggerConfig)
+    LoggerModule.forRoot(loggerConfig),
+    CarouselComponentModule
   ],
   providers: [
     // { provide: LOGGER_CONFIG, useValue: loggerConfig }

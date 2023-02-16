@@ -1,0 +1,10 @@
+<div class="carousel">
+  <div class="slider">
+    <div class="slide" *ngFor="let slideImg of slides">
+      <img [src]="slideImg" />
+    </div>
+  </div>
+
+  <button (click)="slide(1)" class="btn next">Next</button>
+  <button (click)="slide(-1)" class="btn prev">Prev</button>
+</div>
