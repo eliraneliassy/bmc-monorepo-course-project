@@ -1,10 +1,19 @@
 <div class="carousel">
   <div class="slider">
-    <div class="slide" *ngFor="let slideImg of slides">
-      <img [src]="slideImg" />
+    <div class="slide" *ngFor="let slideImg of slides; let i = index">
+      <ng-container [ngTemplateOutlet]="slidesTempaltes || defaultTemplate"
+      [ngTemplateOutletContext]="{
+        $implicit: slideImg,
+        index: i,
+        navigation: nav
+      }"></ng-container>
+
+      <ng-template #defaultTemplate>
+        <img [src]="slideImg" />
+      </ng-template>
     </div>
   </div>
 
-  <button (click)="slide(1)" class="btn next">Next</button>
-  <button (click)="slide(-1)" class="btn prev">Prev</button>
+  <button (click)="nav.next()" class="btn next">Next</button>
+  <button (click)="nav.prev()" class="btn prev">Prev</button>
 </div>

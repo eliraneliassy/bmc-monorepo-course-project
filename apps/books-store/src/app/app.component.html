@@ -5,4 +5,11 @@
 </div> -->
 
 
-<b-carousel [slides]="images"></b-carousel>
+<!-- <b-carousel [slides]="images"></b-carousel> -->
+
+<b-carousel [slides]="names" [slidesTempaltes]="namesTemplate"></b-carousel>
+
+<ng-template #namesTemplate let-name let-index="index" let-moshe="navigation">
+    <div style="font-size: 30px;">{{name}} {{index}} </div>
+    <button (click)="moshe.next()">CLICK HERE TO MOVE NEXT</button>
+</ng-template>

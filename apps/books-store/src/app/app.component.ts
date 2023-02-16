@@ -22,7 +22,15 @@ export class AppComponent {
     `https://www.hostelworld.com/blog/wp-content/uploads/2018/11/hong-kong.jpg`,
     `https://i.insider.com/5d1fb8b121a86105f7522184?width=1000&format=jpeg&auto=webp`
   ]
-  constructor(private booksService: BooksService,
+
+  names: string[] = [
+    'Eliran',
+    'Yoni',
+    'Yakov',
+    'Maayan',
+    'Shahar'
+  ];
+    constructor(private booksService: BooksService,
     private loggerService: LoggerService) {
     this.books$ = this.booksService.getBooks('Angular');
     this.loggerService.log('Hello from the other side');
