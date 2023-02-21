@@ -14,9 +14,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class AppComponent {
 
-
-  books$: Observable<Book[]>
-
   images: string[] = [
     `https://cdn.cheapism.com/images/011618_most_beautiful_views_in_the_world_sli.max-784x410_ZXOqfVp.jpg`,
     `https://loveincorporated.blob.core.windows.net/contentimages/gallery/32cfa085-5a31-48c2-bec8-46b887ac9428-views_great_wall_china.jpg`,
@@ -32,22 +29,14 @@ export class AppComponent {
     'Shahar'
   ];
 
-  form: FormGroup;
-  constructor(private booksService: BooksService,
+
+  constructor(
     private loggerService: LoggerService, private fb: FormBuilder) {
-    this.books$ = this.booksService.getBooks('Angular');
+    
     this.loggerService.log('Hello from the other side');
 
-    this.form = this.fb.group(
-      {
-        name: this.fb.control(null),
-        password: this.fb.control(null)
-      }
-    )
-  }
-
-  submit(){
-    console.log(this.form);
     
   }
+
+  
 }

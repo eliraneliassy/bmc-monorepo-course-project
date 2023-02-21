@@ -15,9 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@bmc/auth": ["libs/auth/src/index.ts"],
       "@bmc/books": ["libs/books/src/index.ts"],
       "@bmc/books-ui": ["libs/books-ui/src/index.ts"],
       "@bmc/components": ["libs/ui-components/src/index.ts"],
+      "@bmc/feed": ["libs/feed/src/index.ts"],
       "@bmc/logger": ["libs/logger/src/index.ts"]
     }
   },

@@ -1,8 +1,3 @@
-<!-- <div *ngIf="books$ | async as books">
-    <bmc-b-course-project-book *ngFor="let book of books" [book]="book">
-
-    </bmc-b-course-project-book>
-</div> -->
 
 
 <!-- <b-carousel [slides]="images"></b-carousel> -->
@@ -15,14 +10,7 @@
 </ng-template>
  -->
 
- <form [formGroup]="form">
+ 
 
-    <!-- <input formControlName="name"> -->
-    <b-input formControlName="name" errorMsg="Name is required" [required]="true" label="Name:"></b-input>
-    <b-input formControlName="password" 
-    pattern="^[a-zA-Z ]*$" errorMsg="Name is not in the right format"></b-input>
-
-    <b-button (click)="submit()" text="SUBMIT"></b-button>
-
- </form>
+ <router-outlet></router-outlet>
 

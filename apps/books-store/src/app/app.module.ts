@@ -10,6 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 const loggerConfig: LoggerConfig = {
   appName: 'books-store'
@@ -25,7 +26,17 @@ const loggerConfig: LoggerConfig = {
     CarouselComponentModule,
     GenericInputComponentModule,
     ReactiveFormsModule,
-    ButtonComponentModule
+    ButtonComponentModule,
+    RouterModule.forRoot(
+      [
+        {
+          path: '', loadChildren: () => import('@bmc/auth').then(m => m.AuthModule)
+        },
+        {
+          path: 'feed', loadChildren: () => import('@bmc/feed').then(m => m.FeedModule)
+        }
+      ]
+    )
   ],
   providers: [
     // { provide: LOGGER_CONFIG, useValue: loggerConfig }

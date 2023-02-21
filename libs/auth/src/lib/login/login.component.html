@@ -1,0 +1,10 @@
+<form [formGroup]="form">
+
+    <!-- <input formControlName="name"> -->
+    <b-input formControlName="name" errorMsg="Name is required" [required]="true" label="Name:"></b-input>
+    <b-input formControlName="password" 
+    pattern="^[a-zA-Z ]*$" errorMsg="Name is not in the right format"></b-input>
+
+    <b-button (click)="submit()" text="SUBMIT"></b-button>
+
+ </form>
